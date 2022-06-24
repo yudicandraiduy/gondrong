@@ -1,5 +1,7 @@
 package com.iduy.gondrong.models;
 
+import com.iduy.gondrong.models.audit.DateAudit;
+import com.iduy.gondrong.util.ERole;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,12 +11,12 @@ import javax.persistence.*;
 @Table(name = "roles")
 @Getter
 @Setter
-public class Role {
+public class Role extends DateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Enumerated(EnumType.STRING)
     @Column(length=20)
-private ERole name;
+    private ERole name;
 }

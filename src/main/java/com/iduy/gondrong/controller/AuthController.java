@@ -1,7 +1,6 @@
 package com.iduy.gondrong.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.iduy.gondrong.models.ERole;
 import com.iduy.gondrong.models.Role;
 import com.iduy.gondrong.models.User;
 import com.iduy.gondrong.payload.request.LoginRequest;
@@ -12,6 +11,7 @@ import com.iduy.gondrong.repository.RoleRepository;
 import com.iduy.gondrong.repository.UserRepository;
 import com.iduy.gondrong.security.JwtUtils;
 import com.iduy.gondrong.sevices.UserDetailsImpl;
+import com.iduy.gondrong.util.ERole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

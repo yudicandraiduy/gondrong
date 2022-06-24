@@ -1,7 +1,7 @@
 package com.iduy.gondrong.repository;
 
-import com.iduy.gondrong.models.ERole;
 import com.iduy.gondrong.models.Role;
+import com.iduy.gondrong.util.ERole;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

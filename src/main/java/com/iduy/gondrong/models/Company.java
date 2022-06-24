@@ -1,5 +1,7 @@
 package com.iduy.gondrong.models;
 
+import com.iduy.gondrong.models.audit.UserDateAudit;
+import com.iduy.gondrong.util.ServiceOption;
 import lombok.Getter;
 import lombok.Setter;
 import net.minidev.json.annotate.JsonIgnore;
@@ -12,9 +14,9 @@ import java.util.Set;
 
 @Setter
 @Getter
-@Table(name = "company")
+@Table(name = "companies")
 @Entity
-public class Company {
+public class Company extends UserDateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,12 +29,16 @@ public class Company {
     @Column(length = 6)
     private ServiceOption serviceOption;
 
+    @Column(length = 100)
     private String areaServed;
 
+    @Column(name = "hours_start")
     private Time hoursStart;
 
+    @Column(name = "hours_end")
     private Time hoursEnd;
 
+    @Column(name = "phone_number")
     private String phoneNumber;
 
     @OneToOne(targetEntity = User.class)

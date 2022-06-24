@@ -1,5 +1,6 @@
 package com.iduy.gondrong.models;
 
+import com.iduy.gondrong.models.audit.DateAudit;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 @Table (name = "categories")
 @Setter
 @Getter
-public class Category {
+public class Category extends DateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -18,12 +19,4 @@ public class Category {
     @Column(length = 100)
     @NotBlank
     private String name;
-
-
-
-
-
-
-
-
 }

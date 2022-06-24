@@ -1,4 +1,4 @@
-package com.iduy.gondrong.models;
+package com.iduy.gondrong.util;
 
 public enum ERole {
     ROLE_USER,

@@ -1,5 +1,6 @@
 package com.iduy.gondrong.models;
 
+import com.iduy.gondrong.models.audit.DateAudit;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Proxy;
@@ -19,7 +20,7 @@ import java.util.Set;
         @UniqueConstraint(columnNames = "email")
 })
 @Proxy(lazy = false)
-public class User {
+public class User extends DateAudit {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id ;
