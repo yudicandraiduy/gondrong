@@ -1,8 +1,7 @@
 package com.iduy.gondrong.controller;
 
-import com.iduy.gondrong.models.Location;
-import com.iduy.gondrong.models.LocationService;
 import com.iduy.gondrong.payload.request.LocationRequest;
+import com.iduy.gondrong.sevices.LocationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

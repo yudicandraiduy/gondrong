@@ -1,8 +1,8 @@
-package com.iduy.gondrong.models;
+package com.iduy.gondrong.sevices;
 
+import com.iduy.gondrong.models.Location;
 import com.iduy.gondrong.payload.request.LocationRequest;
 import com.iduy.gondrong.repository.LocationRepository;
-import com.iduy.gondrong.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,13 +10,11 @@ public class LocationService{
 
     private final LocationRepository repository;
 
-    private final UserRepository userRepository;
 
-
-    public LocationService(LocationRepository repository, UserRepository userRepository) {
+    public LocationService(LocationRepository repository) {
         this.repository = repository;
-        this.userRepository = userRepository;
     }
+
     public Location addData(LocationRequest request){
         Location location = new Location();
         location.setAddress(request.getAddress());
@@ -28,10 +26,6 @@ public class LocationService{
         location.setProvince(request.getProvince());
         location.setVillage(request.getVillage());
         return repository.save(location);
-
-
-
-
     }
 
 
