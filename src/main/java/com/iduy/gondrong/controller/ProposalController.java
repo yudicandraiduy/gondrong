@@ -23,6 +23,5 @@ public class ProposalController {
     public ResponseEntity<?> addData (@Valid @RequestBody ProposalRequest proposal){
         service.addData(proposal);
         return ResponseEntity.ok("mantap cees");
-
     }
 }
