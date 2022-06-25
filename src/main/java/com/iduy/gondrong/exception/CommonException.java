@@ -1,6 +1,7 @@
 package com.iduy.gondrong.exception;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.iduy.gondrong.payload.ErrorSchema;
 import lombok.Getter;
 import lombok.Setter;
 
