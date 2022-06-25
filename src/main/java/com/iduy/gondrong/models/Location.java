@@ -14,7 +14,7 @@ import javax.validation.constraints.NotBlank;
 public class Location extends UserDateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "address")
     @NotBlank

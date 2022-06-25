@@ -10,12 +10,13 @@ import java.sql.Time;
 @Setter
 @Getter
 public class CompanyRequest implements Serializable {
-    private String company;
+    private String companyName;
     private ServiceOption serviceOption;
     private String areaServed;
     private Time hoursStart;
     private Time hoursEnd;
     private String phoneNumber;
+    private String imageUrl;
     private Long userId;
-    private Integer locationId;
+    private Long locationId;
 }

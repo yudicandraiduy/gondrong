@@ -12,10 +12,12 @@ public class ProposalService {
     private final ProposalRepository repository;
 
     private final UserRepository userRepository;
+
     public ProposalService(ProposalRepository repository, UserRepository userRepository) {
         this.repository = repository;
         this.userRepository = userRepository;
     }
+
     public Proposal addData (ProposalRequest request){
         Proposal proposal = new Proposal();
         proposal.setLatarBelakang(request.getLatarBelakang());
@@ -32,10 +34,5 @@ public class ProposalService {
         proposal.setEstimasiBiaya(request.getEstimasiBiaya());
         userRepository.findById(request.getUserId()).ifPresent(proposal::setUser);
         return repository.save(proposal);
-
-
-
     }
-
-
 }

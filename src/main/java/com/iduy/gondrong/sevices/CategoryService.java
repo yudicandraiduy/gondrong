@@ -1,6 +1,10 @@
 package com.iduy.gondrong.sevices;
 
+import com.iduy.gondrong.exception.CommonException;
 import com.iduy.gondrong.models.Category;
+import com.iduy.gondrong.payload.CommonResponse;
+import com.iduy.gondrong.payload.ErrorMessage;
+import com.iduy.gondrong.payload.ErrorSchema;
 import com.iduy.gondrong.payload.request.CategoryRequest;
 import com.iduy.gondrong.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
@@ -14,9 +18,35 @@ public class CategoryService {
         this.repository = repository;
     }
 
-    public Category addData(CategoryRequest request){
+    public CommonResponse addData(CategoryRequest request){
+        if (repository.existsByNameAndEntityName(request.getName(), request.getEntityName())) {
+            CommonException exception = new CommonException();
+            ErrorSchema errorSchema = new ErrorSchema();
+            ErrorMessage errorMessage = new ErrorMessage();
+            errorMessage.setEnglish("Data Already Exist");
+            errorMessage.setBahasa("Data Sudah Ada");
+            errorSchema.setErrorCode("000000");
+            errorSchema.setErrorMessage(errorMessage);
+            exception.setErrorSchema(errorSchema);
+            exception.setOutputSchema("");
+            throw exception;
+        }
+
         Category category = new Category();
         category.setName(request.getName());
-        return repository.save(category);
+        category.setEntityName(request.getEntityName());
+        repository.save(category);
+
+        ErrorSchema errorSchema = new ErrorSchema();
+        ErrorMessage errorMessage = new ErrorMessage();
+        errorMessage.setEnglish("Success Add Data");
+        errorMessage.setBahasa("Berhasil Tambah Data");
+        errorSchema.setErrorCode("000000");
+        errorSchema.setErrorMessage(errorMessage);
+
+        CommonResponse response = new CommonResponse();
+        response.setOutputSchema(category);
+        response.setErrorSchema(errorSchema);
+        return response;
     }
 }

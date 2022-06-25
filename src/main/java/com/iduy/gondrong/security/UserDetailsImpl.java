@@ -1,4 +1,4 @@
-package com.iduy.gondrong.sevices;
+package com.iduy.gondrong.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.iduy.gondrong.models.User;

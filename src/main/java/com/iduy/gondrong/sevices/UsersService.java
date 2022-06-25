@@ -2,16 +2,17 @@ package com.iduy.gondrong.sevices;
 
 import com.iduy.gondrong.models.User;
 import com.iduy.gondrong.repository.UserRepository;
+import com.iduy.gondrong.security.UserDetailsImpl;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
+public class UsersService implements org.springframework.security.core.userdetails.UserDetailsService {
     private final UserRepository repository;
 
-    public UserDetailsService(UserRepository repository) {
+    public UsersService(UserRepository repository) {
         this.repository = repository;
     }
 

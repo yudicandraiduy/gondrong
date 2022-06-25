@@ -21,7 +21,7 @@ public class Company extends UserDateAudit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 100)
+    @Column(name = "company_name", length = 100)
     @NotBlank
     private String companyName;
 
@@ -29,7 +29,7 @@ public class Company extends UserDateAudit {
     @Column(length = 6)
     private ServiceOption serviceOption;
 
-    @Column(length = 100)
+    @Column(name = "area_served", length = 100)
     private String areaServed;
 
     @Column(name = "hours_start")
@@ -38,7 +38,7 @@ public class Company extends UserDateAudit {
     @Column(name = "hours_end")
     private Time hoursEnd;
 
-    @Column(name = "phone_number")
+    @Column(name = "phone_number", length = 13)
     private String phoneNumber;
 
     @OneToOne(targetEntity = User.class)
@@ -47,4 +47,10 @@ public class Company extends UserDateAudit {
 
     @OneToMany(targetEntity = Location.class)
     private Set<Location> locations = new HashSet<>();
+
+    @Column(name = "is_active")
+    private Boolean isActive;
+
+    @Column(name = "image_url")
+    private String imageUrl;
 }

@@ -1,6 +1,6 @@
 package com.iduy.gondrong.security;
 
-import com.iduy.gondrong.sevices.UserDetailsService;
+import com.iduy.gondrong.sevices.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +21,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
         prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    UserDetailsService userDetailsService;
+    UsersService usersService;
 
     @Autowired
     private AuthEntryPointJwt unauthorizedHandler;
@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(AuthenticationManagerBuilder builder) throws Exception{
-        builder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+        builder.userDetailsService(usersService).passwordEncoder(passwordEncoder());
     }
     @Bean
     @Override

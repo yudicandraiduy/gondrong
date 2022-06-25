@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 public class Event extends UserDateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "url")
     @NotBlank

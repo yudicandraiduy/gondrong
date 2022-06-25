@@ -1,7 +1,7 @@
 package com.iduy.gondrong.models;
 
 import com.iduy.gondrong.models.audit.DateAudit;
-import com.iduy.gondrong.util.ERole;
+import com.iduy.gondrong.util.RoleType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,5 +18,5 @@ public class Role extends DateAudit {
 
     @Enumerated(EnumType.STRING)
     @Column(length=20)
-    private ERole name;
+    private RoleType name;
 }

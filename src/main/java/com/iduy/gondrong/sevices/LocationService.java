@@ -18,7 +18,7 @@ public class LocationService{
     public Location addData(LocationRequest request){
         Location location = new Location();
         location.setAddress(request.getAddress());
-        location.setNeighbourhood(request.getNeightbourhood());
+        location.setNeighbourhood(request.getNeighbourhood());
         location.setRegency(request.getRegency());
         location.setHamlet(request.getHamlet());
         location.setProvince(request.getProvince());

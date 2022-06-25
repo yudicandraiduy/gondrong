@@ -27,12 +27,13 @@ public class CompanyService {
     }
     public Company addData (CompanyRequest request){
         Company company = new Company();
-        company.setCompanyName(request.getCompany());
+        company.setCompanyName(request.getCompanyName());
         company.setServiceOption(request.getServiceOption());
         company.setAreaServed(request.getAreaServed());
         company.setHoursEnd(request.getHoursEnd());
         company.setHoursStart(request.getHoursStart());
         company.setPhoneNumber(request.getPhoneNumber());
+        company.setImageUrl(request.getImageUrl());
         userRepository.findById(request.getUserId()).ifPresent(company::setUser);
         locationRepository.findById(request.getLocationId()).ifPresent(location -> {
             Set<Location> data = new HashSet<>();

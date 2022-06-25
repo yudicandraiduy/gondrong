@@ -9,4 +9,5 @@ import java.io.Serializable;
 @Setter
 public class CategoryRequest implements Serializable {
     private String name;
+    private String entityName;
 }

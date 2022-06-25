@@ -9,13 +9,11 @@ import java.io.Serializable;
 @Getter
 public class LocationRequest implements Serializable {
     private String address;
-    private String neightbourhood;
+    private String neighbourhood;
     private String hamlet;
     private String village;
     private String subDistrict;
     private String regency;
     private String province;
     private String postalCode;
-
-
 }

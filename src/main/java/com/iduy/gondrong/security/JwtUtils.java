@@ -1,6 +1,5 @@
 package com.iduy.gondrong.security;
 
-import com.iduy.gondrong.sevices.UserDetailsImpl;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.slf4j.Logger;
