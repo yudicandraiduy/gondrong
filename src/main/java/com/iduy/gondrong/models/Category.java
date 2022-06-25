@@ -19,4 +19,7 @@ public class Category extends DateAudit {
     @Column(length = 100)
     @NotBlank
     private String name;
+
+    private String entityName;
+
 }
