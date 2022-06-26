@@ -19,11 +19,13 @@ public class Category extends DateAudit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(length = 100)
+    @Column(name = "name", length = 100)
     @NotBlank
     private String name;
 
-    @Column(name = "entity_name")
+    @Column(name = "entity_name", length = 21)
     private String entityName;
 
+    @Column(name = "is_active")
+    private Boolean isActive;
 }

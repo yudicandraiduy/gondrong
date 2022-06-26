@@ -1,4 +1,4 @@
-package com.iduy.gondrong.payload.response;
+package com.iduy.gondrong.payload;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -7,10 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -30,5 +27,13 @@ public class CategoryController {
         CommonResponse response = service.addData(category);
         logger.info("Leaving addData method on class " + CategoryController.class.getName() + " at " + System.currentTimeMillis(), response);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
+    @GetMapping
+    public ResponseEntity<CommonResponse> getAllData() {
+        logger.info("Entering getAllData method on class " + CategoryController.class.getName() + " at " + System.currentTimeMillis());
+        CommonResponse response = service.allDataCategories();
+        logger.info("Leaving getAllData method on class " + CategoryController.class.getName() + " at " + System.currentTimeMillis(), response);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

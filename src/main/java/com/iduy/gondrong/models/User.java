@@ -23,7 +23,7 @@ import java.util.Set;
 public class User extends DateAudit {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Long id ;
+    private Long id;
 
     @NotBlank
     @Size(max=20)
