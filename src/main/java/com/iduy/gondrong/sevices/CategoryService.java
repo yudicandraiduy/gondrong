@@ -75,6 +75,7 @@ public class CategoryService {
             CategoryResponse response = new CategoryResponse();
             response.setId(category.getId());
             response.setName(category.getName());
+            response.setEntityName(category.getEntityName());
             responses.add(response);
         });
 
