@@ -8,10 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table (name = "categories",  uniqueConstraints = {
-        @UniqueConstraint(columnNames = "name"),
-        @UniqueConstraint(columnNames = "entity_name")
-})
+@Table (name = "categories")
 @Setter
 @Getter
 public class Category extends DateAudit {
