@@ -8,6 +8,7 @@ import com.iduy.gondrong.payload.ErrorSchema;
 import com.iduy.gondrong.payload.request.CategoryRequest;
 import com.iduy.gondrong.payload.response.CategoryResponse;
 import com.iduy.gondrong.repository.CategoryRepository;
+import com.iduy.gondrong.util.Constant;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -83,7 +84,7 @@ public class CategoryService {
         ErrorMessage errorMessage = new ErrorMessage();
         errorMessage.setEnglish("Success");
         errorMessage.setBahasa("Berhasil");
-        errorSchema.setErrorCode("000000");
+        errorSchema.setErrorCode(Constant.SUCCESS_CODE);
         errorSchema.setErrorMessage(errorMessage);
 
         CommonResponse response = new CommonResponse();
