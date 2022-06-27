@@ -9,8 +9,7 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table (name = "categories",  uniqueConstraints = {
-        @UniqueConstraint(columnNames = "name"),
-        @UniqueConstraint(columnNames = "entity_name")
+        @UniqueConstraint(columnNames = "name")
 })
 @Setter
 @Getter
