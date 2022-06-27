@@ -13,6 +13,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/category")
+@CrossOrigin(origins = "*")
 public class CategoryController {
     private final Logger logger = LoggerFactory.getLogger(CategoryController.class);
     private final CategoryService service;

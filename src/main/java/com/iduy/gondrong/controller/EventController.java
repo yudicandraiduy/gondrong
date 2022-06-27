@@ -3,15 +3,13 @@ package com.iduy.gondrong.controller;
 import com.iduy.gondrong.payload.request.EventRequest;
 import com.iduy.gondrong.sevices.EventService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/event")
+@CrossOrigin(origins = "*")
 public class EventController {
 
     private final EventService service;
