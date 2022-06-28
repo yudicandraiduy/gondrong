@@ -22,4 +22,5 @@ public class ProposalController {
         service.addData(proposal);
         return ResponseEntity.ok("mantap cees");
     }
+
 }

@@ -10,8 +10,8 @@ import java.util.List;
 public interface CategoryRepository extends JpaRepository<Category,Integer> {
     boolean existsByNameAndEntityName(String categoryName, String entityName);
 
-    @Override
-    List<Category> findAll();
+
+
 
     List<Category> findAllByIsActive(Boolean isActive);
 }

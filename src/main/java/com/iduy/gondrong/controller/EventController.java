@@ -29,8 +29,6 @@ public class EventController {
         CommonResponse response = service.addData(request);
         logger.info("Leaving addData method on class" + EventController.class.getName() + " at " + System.currentTimeMillis());
         return new ResponseEntity<>(response,HttpStatus.CREATED);
-
-
     }
     @GetMapping
     public ResponseEntity<CommonResponse> getAllData(){
@@ -38,10 +36,6 @@ public class EventController {
         CommonResponse response = service.allDataEvents();
         logger.info("Leaving addData method on class"+ EventController.class.getName() + " at " + System.currentTimeMillis());
         return new ResponseEntity<>(response, HttpStatus.OK);
-
-
-
-
     }
 
 }
