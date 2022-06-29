@@ -18,7 +18,7 @@ public class Location extends UserDateAudit {
 
     @Column(name = "address")
     @NotBlank
-    private String Address;
+    private String address;
 
     @Column(name = "neighbourhood", length = 3)
     private String neighbourhood;
